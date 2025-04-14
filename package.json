@@ -1,0 +1,45 @@
+{ "name": "hookrunner25a-pmb",
+  "version": "0.0.0",
+  "description": "Rudimentary EventEmitter-style event manager for running serially async handler chains that update a shared state object unless the chain is aborted.",
+  "keywords": [
+    "async",
+    "await",
+    "event",
+    "eventemitter",
+    "events",
+    "hook",
+    "hooks",
+    "promise",
+    "promises",
+    "promising",
+    "series",
+    "shared state",
+    "subscribe"
+  ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/hookrunner25a-pmb-js/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/hookrunner25a-pmb-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/hookrunner25a-pmb-js/issues"
+  },
+  "contributors": [],
+
+  "private": false, "license": "ISC",
+
+  "main": "index.mjs",
+  "scripts": { "test": "elp && nodemjs test/all.mjs" },
+  "directories": { "test": "test" },
+  "eslintConfig": { "extends": "nodejs-pmb" },
+
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+
+
+  "engines": { "npm": ">=7.0.0", "node": ">=16.0.0" }
+}
