@@ -1,5 +1,5 @@
 { "name": "hookrunner25a-pmb",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Rudimentary EventEmitter-style event manager for running serially async handler chains that update a shared state object unless the chain is aborted.",
   "keywords": [
     "async",
@@ -36,8 +36,16 @@
   "eslintConfig": { "extends": "nodejs-pmb" },
 
   "dependencies": {
+    "lodash.mapvalues": "^4.6.0",
+    "p-each-series": "^2.2.0",
+    "typechecks-pmb": "^0.240627.1"
   },
   "devDependencies": {
+    "eslint-config-nodejs-pmb": "^0.3.6",
+    "eslint-plugin-json-light-pmb": "^1.0.7",
+    "eslint-plugin-n": "^17.16.2",
+    "eslint-pretty-pmb": "^1.0.5",
+    "nodemjs": "^0.1.16"
   },
 
 
