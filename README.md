@@ -81,6 +81,12 @@ Related projects
   and I'm not sure if it can run handlers in series.
 * [eventemitter3](https://npm.im/eventemitter3)
   also is really neat but cannot run handlers in series.
+* [hookable](https://npm.im/hookable)
+  isn't clear about the extent of their promises support
+  (as of 2025-05-12 / v5.5.3, the only mention of "promise" is in a
+  migration note) and seems to have no abort feature.
+  Also not clear whether promising hooks can run in series.
+
 
 
 
