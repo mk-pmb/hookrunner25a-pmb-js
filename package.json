@@ -1,5 +1,5 @@
 { "name": "hookrunner25a-pmb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rudimentary EventEmitter-style event manager for running serially async handler chains that update a shared state object unless the chain is aborted.",
   "keywords": [
     "async",

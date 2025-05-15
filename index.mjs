@@ -46,7 +46,7 @@ EX.api = {
     let funcs = core.get(hookName);
     if (!funcs) { return hookState; }
     funcs = [prepareIfAny, ...funcs.values()];
-    pEachSeries(funcs, async function wrapHookCall(hookFunc) {
+    await pEachSeries(funcs, async function wrapHookCall(hookFunc) {
       if (!hookFunc) { return; }
       if (hookState.hookAborted) { return; }
       const upd = await hookFunc(hookState);
