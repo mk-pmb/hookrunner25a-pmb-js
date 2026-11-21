@@ -57,7 +57,16 @@ Throws an error is it's already on that chain.
 Otherwise, return a success object whose `unsubscribe` key will hold
 a function that can be called once to remove `hookFunc` from the chain.
 
-
+* If `hookFunc` is omitted, `hookName` may be an object. That object
+  is expected to be a dictionary `{ hookName -> hookFunc }`
+  and each `hookFunc` will be registered for its key (`hookName`).
+  The return value will be a dictionary of the success objects.
+* If `hookFunc` is an array, each item is expected to be a hook function,
+  and each will be registered for its `hookName`.
+  The return value will be an array of the success objects.
+* Array and dictionary modes are independent, so you can freely mix them.
+  The return value will mimic the original structure, and thus will be
+  a dictionary of (arrays of) success objects.
 
 
 

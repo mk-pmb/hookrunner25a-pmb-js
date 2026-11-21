@@ -5,8 +5,10 @@ import mustBe from 'typechecks-pmb/must-be.js';
 import pEachSeries from 'p-each-series';
 
 
+const isAry = Array.isArray;
 const voidUnsub = { delete() { throw new Error('Already unsubscribed!'); } };
 
+function isObj(x) { return ((x && typeof x) === 'object'); }
 function ores(x) { return x || ''; }
 function orf(x) { return x || false; }
 
@@ -61,8 +63,16 @@ EX.api = {
   },
 
 
-  add(core, hookName, hookFunc) {
+  add: function add(core, hookName, hookFunc) {
+    if (isObj(hookName)) {
+      if (hookFunc) {
+        throw new Error('Cannot accept hookFunc in dictionary mode!');
+      }
+      return loMapValues(hookName, (hf, hn) => add(core, hn, hf));
+    }
     mustBe.nest('The hook name', hookName);
+    if (!hookFunc) { return; }
+    if (isAry(hookFunc)) { return hookFunc.map(f => add(core, hookName, f)); }
     mustBe.fun('The hook function for ' + hookName + core.trace, hookFunc);
     let funcs = core.get(hookName);
     if (funcs) {

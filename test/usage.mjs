@@ -23,9 +23,14 @@ test('Basic usage example', async (t) => {
   runHook.add('getColors', state => ({ list: state.list + 'white,' }));
   runHook.add('getColors', state => (abort || { list: state.list + 'grey,' }));
   runHook.add('getColors', state => ({ list: state.list + 'black,' }));
-  runHook.add('getSizes', state => ({ list: state.list + 'small,' }));
-  runHook.add('getSizes', state => ({ list: state.list + 'medium,' }));
-  runHook.add('getSizes', state => (abort || { list: state.list + 'large,' }));
+  runHook.add({
+    getSizes: [
+      state => ({ list: state.list + 'small,' }),
+      state => ({ list: state.list + 'medium,' }),
+      state => (abort || { list: state.list + 'large,' }),
+    ],
+  });
+
   t.same(await runHook('getColors', { list: '' }),
     { hookName: 'getColors', hookAborted: false, list: 'white,grey,black,' });
   t.same(await runHook('getSizes', { list: '' }),
