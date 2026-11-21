@@ -20,6 +20,7 @@ This module exports one function:
 
 Returns a fresh new `runHook` function that will have this API:
 
+
 ### runHook(hookName[, initialState[, prepareIfAny]])
 
 Return a promise for the state object that will resolve once the chain ended.
@@ -65,7 +66,7 @@ a function that can be called once to remove `hookFunc` from the chain.
 Usage
 -----
 
-:TODO:
+see [test/usage.mjs](test/usage.mjs).
 
 
 
